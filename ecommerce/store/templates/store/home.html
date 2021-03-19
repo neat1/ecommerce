@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<html lang="en" dir="ltr">
+  <head>
+    <title>Live the Bobo</title>
+  </head>
+  <body>
+    <!--Welcome Message-->
+    <div class="text-center">
+      <h1>We live the Bobo</h1>
+    </div>
+    <!--End of Welcome Message-->
+  <!--This is the start of the promo images>-->
+    <div class="px-5">
+      <div class="row gx-5">
+      <div class="col">
+       <div class="row"></div>
+       <img class="thumbnail-left-image" src="{% static 'images/bourg.jpg' %}">
+      </div>
+      <div class="col">
+        <div class="row"></div>
+        <img class="thumbnail-right-image" src="{% static 'images/bourg2.jpg' %}">
+      </div>
+    </div>
+    </div>
+  <!--This is the end of the promo images>-->
+
+  <!--This is the beginning of the main page promo shop items>-->
+  <div class="text-left px-5 py-1">
+    <h2>Tendances du moment</h2>
+
+  </div>
+  <div class="row py-5 px-5">
+  		<div class="col-lg-4">
+  			<img class="thumbnail" src="{% static 'images/bourg_shoes5.jpg' %}">
+  			<div class="box-element product">
+  				<h6><strong>Bobo Pinède</strong></h6>
+  				<hr>
+  				<button  class="btn btn-outline-success add-btn update-cart">Ajouter au panier</button>
+  				<a class="btn btn-outline-secondary" href="#">Regarder</a>
+  				<h4 style="display: inline-block; float: right"><strong>€120</strong></h4>
+  			</div>
+  		</div>
+  		<div class="col-lg-4">
+  			<img class="thumbnail" src="{% static 'images/bourg_shoes6.jpg' %}">
+  			<div class="box-element product">
+  				<h6><strong>Bobo Pavé</strong></h6>
+  				<hr>
+  				<button  class="btn btn-outline-success add-btn update-cart">Ajouter au panier</button>
+  				<a class="btn btn-outline-secondary" href="#">Regarder</a>
+  				<h4 style="display: inline-block; float: right"><strong>€110</strong></h4>
+  			</div>
+  		</div>
+  		<div class="col-lg-4">
+  			<img class="thumbnail" src="{% static 'images/bourg_shoes3.jpg' %}">
+  			<div class="box-element product">
+  				<h6><strong>Bobo Crème</strong></h6>
+  				<hr>
+  				<button  class="btn btn-outline-success add-btn update-cart">Ajouter au panier</button>
+  				<a class="btn btn-outline-secondary" href="#">Regarder</a>
+  				<h4 style="display: inline-block; float: right"><strong>€135</strong></h4>
+  			</div>
+  		</div>
+  	</div>
+{% endblock %}
+{% block checkout_summary %}
+{% endblock checkout_summary %}
+  </body>
+</html>

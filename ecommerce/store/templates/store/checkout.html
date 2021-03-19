@@ -1,0 +1,171 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<body class="bg-light">
+
+<div class="container">
+<main>
+<div class="py-5 text-center">
+  <img class="d-block mx-auto mb-4" src="{% static 'images/bobo.png' %}" alt="" width="72" height="57">
+  <h2>Paiement</h2>
+  <p class="lead">S'il vous plaît remplir les informations ci-dessous.</p>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-5 col-lg-4 order-md-last">
+    {% include "store/your_cart.html" %}
+
+
+  </div>
+  <div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Addresse de livraison</h4>
+    <form class="needs-validation" novalidate>
+      <div class="row g-3">
+        <div class="col-sm-6">
+          <label for="firstName" class="form-label">Prénom</label>
+          <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+          <div class="invalid-feedback">
+            Un prénom valide est requis.
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <label for="lastName" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+          <div class="invalid-feedback">
+            Un prénom valide est obligatoire.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Veuillez saisir une adresse e-mail valide pour les information d'expédition.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Veuillez saisir une adresse e-mail valide pour les mises à jour d'expédition.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+        </div>
+
+        <div class="col-md-5">
+          <label for="country" class="form-label">Pays</label>
+          <select class="form-select" id="country" required>
+            <option value="">Choisir...</option>
+            <option>France</option>
+          </select>
+          <div class="invalid-feedback">
+            Veuillez sélectionner un pays valide.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="state" class="form-label">Region</label>
+          <select class="form-select" id="state" required>
+            <option value="">Choisir...</option>
+            <option>Nouvelle-Aquitaine</option>
+          </select>
+          <div class="invalid-feedback">
+            Veuillez fournir un region valide.
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="zip" class="form-label">Code Postal</label>
+          <input type="text" class="form-control" id="zip" placeholder="" required>
+          <div class="invalid-feedback">
+            Le code postal est requis.
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="same-address">
+        <label class="form-check-label" for="same-address">Adresse de facturation identique à l'adresse de livraison</label>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="save-info">
+        <label class="form-check-label" for="save-info">Enregistrez ces informations pour la prochaine fois</label>
+      </div>
+
+      <hr class="my-4">
+
+      <h4 class="mb-3">Paiement</h4>
+
+      <div class="my-3">
+        <div class="form-check">
+          <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+          <label class="form-check-label" for="credit">Carte de paiement</label>
+        </div>
+        <div class="form-check">
+          <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+          <label class="form-check-label" for="paypal">PayPal</label>
+        </div>
+      </div>
+
+      <div class="row gy-3">
+        <div class="col-md-6">
+          <label for="cc-name" class="form-label">Nom sur la carte</label>
+          <input type="text" class="form-control" id="cc-name" placeholder="" required>
+          <small class="text-muted">Full name as displayed on card</small>
+          <div class="invalid-feedback">
+            Le nom sur la carte est obligatoire
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="cc-number" class="form-label">Numéro de carte</label>
+          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+          <div class="invalid-feedback">
+            Le numéro de carte de crédit est obligatoire
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="cc-expiration" class="form-label">Date d’expiration</label>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+          <div class="invalid-feedback">
+            Date d'expiration est obligatoire
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="cc-cvv" class="form-label">CVV</label>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+          <div class="invalid-feedback">
+            Code de sécurité est obligatoire
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4">
+
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Paiement</button>
+    </form>
+  </div>
+</div>
+</main>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+<p class="mb-1">&copy; 2021 Bobo Inc</p>
+<ul class="list-inline">
+  <li class="list-inline-item"><a href="#">Privacy</a></li>
+  <li class="list-inline-item"><a href="#">Terms</a></li>
+  <li class="list-inline-item"><a href="#">Support</a></li>
+</ul>
+</footer>
+</div>
+{% endblock content %}
