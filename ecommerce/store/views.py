@@ -58,3 +58,7 @@ def checkout_summary(request):
 def navbar(request):
 	context = {}
 	return render(request, 'store/navbar.html', context)
+
+def durability(request):
+	context = {}
+	return render(request, 'store/durability.html', context)
